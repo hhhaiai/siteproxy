@@ -6,9 +6,9 @@
     "node": ">=22.0.0"
   },
   "scripts": {
-    "wrangler-login": "wrangler login",
-    "deploy-cf-worker": "echo 'Deploy to Cloudflare with: wrangler deploy --config wrangler.worker.jsonc' && wrangler deploy --config wrangler.worker.jsonc",
-    "deploy-cf-page": "echo 'Deploy to Cloudflare with: wrangler pages deploy' && wrangler pages deploy --branch=main"
+    "wrangler-login": "npm_config_ignore_scripts=true npx --yes wrangler@4.72.0 login",
+    "deploy-cf-worker": "echo 'Deploy to Cloudflare with: wrangler deploy --config wrangler.worker.jsonc' && npm_config_ignore_scripts=true npx --yes wrangler@4.72.0 deploy --config wrangler.worker.jsonc",
+    "deploy-cf-page": "echo 'Deploy to Cloudflare Pages project: siteproxy' && npm_config_ignore_scripts=true npx --yes wrangler@4.72.0 pages deploy build/cf_page --project-name siteproxy --branch main"
   },
   "dependencies": { },
   "devDependencies": {
